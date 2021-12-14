@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<textarea id="inputArea" name="input"
+          rows="10" cols="100"
+          placeholder='вставь мне!'></textarea>
+
+<button onclick="readInput()">GO</button>
+
+<button onclick="read_replace()">GO2</button>
+
+<p id="inputCheck"></p>
+
+<p id="output"></p>
+
+<script>
+function readInput() {
+  var input = document.getElementById("inputArea").value;
+  document.getElementById("inputCheck").innerHTML = input;
+}
+
+let output = document.getElementById("output");
+
+function read_replace() {
+
+let text = document.getElementById("inputArea").value;
+
+text = text.replace(/\n/g, ' ');
+text = text.replace(/ прошу/g, '');
+text = text.replace(/удалить/g, 'удалил');
+text = text.replace(/создать/g, 'создал');
+text = text.replace(/добавить/g, 'добавил');
+text = text.replace(/Анна Аксенова/g, '\nАнна Аксенова');
+text = text.replace(/установить/g, 'установил');
+text = text.replace(/уcтановить/g, 'установил');
+text = text.replace(/Анна Аксенова, \[/g, '');
+text = text.replace(/MCC=/g, '');
+text = text.replace(/MNC=/g, '');
+text = text.replace(/\]/g, '');
+text = text.replace(/\d\d-\w\w\w-2\d /g, "<br>");
+
+output.innerHTML = text;
+}
+
+</script>
+
+</body>
+</html>
