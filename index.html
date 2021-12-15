@@ -11,6 +11,8 @@
 
 <button onclick="read_replace()">РЕЖЕМ</button>
 
+<button onclick="formSql()">обрезать для SQL</button>
+
 <p id="inputCheck"></p>
 
 <p id="output"></p>
@@ -40,6 +42,20 @@ text = text.replace(/MCC=/g, '');
 text = text.replace(/MNC=/g, '');
 text = text.replace(/\]/g, '');
 text = text.replace(/\d\d-\w\w\w-2\d /g, "<br>");
+
+output.innerHTML = text;
+}
+
+function formSql() {
+let text = document.getElementById("inputArea").value;
+
+text = text.replace(/MNC/g, 'and MNC');
+
+text = text.replace(/(MCC=\d+ and MNC=\d+)/g, '($1) or');
+text = text.replace(/.*(\(MCC=\d+ and MNC=\d+\) or ).*/g, '$1');
+text = text.replace(/^.*\s/, 'delete from sms_scheme_traffic where id_client= and \(');
+text = text.replace(/ or $/, '\)');
+
 
 output.innerHTML = text;
 }
