@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8">
-  <title>Report cutter and other stuff</title>
-  <link rel="stylesheet" href="./style.css">
-</html>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>Report cutter and other stuff</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
-
-<textarea id="inputArea" name="input"
+  <body>
+    <textarea id="inputArea" name="input"
           rows="10" cols="100"
           placeholder='insert text here'></textarea>
+    <button onclick="readInput()">debug</button>
+    <button onclick="formReport()">Cut-replace for report</button>
+    <button onclick="formSql()">Cut-replace for SQL delete</button>
+    <p id="inputCheck"></p>
+    <p id="output"></p>
 
-<button onclick="readInput()">debug</button>
-
-<button onclick="formReport()">Cut-replace for report</button>
-
-<button onclick="formSql()">Cut-replace for SQL delete</button>
-
-<p id="inputCheck"></p>
-
-<p id="output"></p>
-
-<script>
-function readInput() {
+  <script>
+  function readInput() {
   var input = document.getElementById("inputArea").value;
   document.getElementById("inputCheck").innerHTML = input;
 }
-
-let output = document.getElementById("output");
-
-function formReport() {
+  let output = document.getElementById("output");
+  function formReport() {
 
 let text = document.getElementById("inputArea").value;
 
@@ -49,8 +42,7 @@ text = text.replace(/\d\d-\w\w\w-2\d /g, "<br>");
 
 output.innerHTML = text;
 }
-
-function formSql() {
+  function formSql() {
 let text = document.getElementById("inputArea").value;
 
 text = text.replace(/MNC/g, 'and MNC');
@@ -63,8 +55,7 @@ text = text.replace(/ or $/, '\)');
 
 output.innerHTML = text;
 }
+  </script>
 
-</script>
-
-</body>
+  </body>
 </html>
