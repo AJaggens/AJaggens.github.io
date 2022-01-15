@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <meta charset="utf-8">
+  <title>Report cutter and other stuff</title>
+  <link rel="stylesheet" href="./style.css">
+</html>
 <body>
 
 
@@ -9,9 +13,9 @@
 
 <button onclick="readInput()">debug</button>
 
-<button onclick="read_replace()">cut for report</button>
+<button onclick="formReport()">Cut-replace for report</button>
 
-<button onclick="formSql()">cut for SQL delete</button>
+<button onclick="formSql()">Cut-replace for SQL delete</button>
 
 <p id="inputCheck"></p>
 
@@ -25,7 +29,7 @@ function readInput() {
 
 let output = document.getElementById("output");
 
-function read_replace() {
+function formReport() {
 
 let text = document.getElementById("inputArea").value;
 
