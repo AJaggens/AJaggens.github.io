@@ -7,16 +7,20 @@
   </head>
 
   <body>
-    <textarea id="inputArea" name="input"
-    rows="10" cols="100"
-    placeholder='insert text here'></textarea>
+      <div class="inp-out">
+        <textarea id="inputArea" name="input"
+        rows="10" cols="100"
+        placeholder='insert text here'></textarea>
+        <p id="output"></p>
+    </div>
+    
     <div class="button-container">
         <button onclick="readInput()">debug</button>
         <button onclick="formReport()">Cut-replace for report</button>
         <button onclick="formSql()">Cut-replace for SQL delete</button>
         </div>
     <p id="inputCheck"></p>
-    <p id="output"></p>
+    
 
         <script>
         function readInput() {

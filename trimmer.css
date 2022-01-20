@@ -6,6 +6,12 @@ body {
 .button-container {
     width: auto;
     height: auto;
+    text-align: center;
+}
+
+.inp-out {
+    display: flex;
+    margin: 16px;
 }
 
 #output {
