@@ -1,9 +1,14 @@
-.big {
-    font-size: 48px;
-    font-weight: bold;
-}
-
 a {
     font-size: 48px;
     font-weight: bold;
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
 }
