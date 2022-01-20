@@ -2,64 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Report cutter and other stuff</title>
+    <title>Mainpage</title>
     <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
-    <textarea id="inputArea" name="input"
-          rows="10" cols="100"
-          placeholder='insert text here'></textarea>
-    <div class="button-container">
-      <button onclick="readInput()">debug</button>
-      <button onclick="formReport()">Cut-replace for report</button>
-      <button onclick="formSql()">Cut-replace for SQL delete</button>
-    </div>
-    <p id="inputCheck"></p>
-    <p id="output"></p>
+    
 
-  <script>
-  function readInput() {
-  var input = document.getElementById("inputArea").value;
-  document.getElementById("inputCheck").innerHTML = input;
-}
-  let output = document.getElementById("output");
-  function formReport() {
-
-let text = document.getElementById("inputArea").value;
-
-text = text.replace(/\n/g, ' ');
-text = text.replace(/ прошу/g, '');
-text = text.replace(/удалить/g, 'удалил');
-text = text.replace(/создать/g, 'создал');
-text = text.replace(/добавить/g, 'добавил');
-text = text.replace(/Анна Аксенова/g, '\nАнна Аксенова');
-text = text.replace(/установить/g, 'установил');
-text = text.replace(/уcтановить/g, 'установил');
-text = text.replace(/Анна Аксенова, \[/g, '');
-text = text.replace(/MCC=/g, '');
-text = text.replace(/MNC=/g, '');
-text = text.replace(/\]/g, '');
-text = text.replace(/\d\d-\w\w\w-2\d /g, "<br>");
-
-output.innerHTML = text;
-}
-  function formSql() {
-let text = document.getElementById("inputArea").value;
-
-text = text.replace(/MNC/g, 'and MNC');
-
-text = text.replace(/(MCC=\d+ and MNC=\d+)/g, '($1) or');
-text = text.replace(/.*(\(MCC=\d+ and MNC=\d+\) or ).*/g, '$1');
-text = text.replace(/^.*\s/, 'delete from sms_scheme_traffic where id_client= and \(');
-text = text.replace(/ or $/, '\)');
-
-
-output.innerHTML = text;
-}
-  </script>
-
+    <a href="./trimmer.html">testpage</a>    
     <a href="./testing.html">testpage</a>
+    
 
   </body>
 </html>
