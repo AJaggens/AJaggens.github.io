@@ -15,7 +15,7 @@ function formReport() {
     text = text.replace(/добавить/g, 'добавил');
     text = text.replace(/Анна Аксенова/g, '\nАнна Аксенова');
     text = text.replace(/установить/g, 'установил');
-    text = text.replace(/уcтановить/g, 'установил');
+    text = text.replace(/подменить/g, 'подменил');
     text = text.replace(/Анна Аксенова, \[/g, '');
     text = text.replace(/MCC=/g, '');
     text = text.replace(/MNC=/g, '');
