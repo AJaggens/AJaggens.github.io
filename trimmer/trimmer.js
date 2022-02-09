@@ -5,7 +5,7 @@ function readInput() {
         
 let outputContainer = document.querySelector('.inp-out')
 let outputPara = document.createElement('p')
-outputPara.classList.add('content');
+outputPara.classList.add('output');
 
 
 function formReport() {
