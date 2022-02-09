@@ -16,9 +16,10 @@ function formReport() {
     text = text.replace(/удалить/g, 'удалил');
     text = text.replace(/создать/g, 'создал');
     text = text.replace(/добавить/g, 'добавил');
-    text = text.replace(/Анна Аксенова/g, '\nАнна Аксенова');
+    text = text.replace(/отправить/g, 'отправил');
     text = text.replace(/установить/g, 'установил');
     text = text.replace(/подменить/g, 'подменил');
+    text = text.replace(/Анна Аксенова/g, '\nАнна Аксенова');
     text = text.replace(/Анна Аксенова, \[/g, '');
     text = text.replace(/MCC=/g, '');
     text = text.replace(/MNC=/g, '');
@@ -30,16 +31,16 @@ function formReport() {
 
 }
         
-function formSql() {
-    let text = document.getElementById("inputArea").value;
+// function formSql() {
+//     let text = document.getElementById("inputArea").value;
 
-    text = text.replace(/MNC/g, 'and MNC');
-    text = text.replace(/(MCC=\d+ and MNC=\d+)/g, '($1) or');
-    text = text.replace(/.*(\(MCC=\d+ and MNC=\d+\) or ).*/g, '$1');
-    text = text.replace(/^.*\s/, 'delete from sms_scheme_traffic where id_client= and \(');
-    text = text.replace(/ or $/, '\)');
+//     text = text.replace(/MNC/g, 'and MNC');
+//     text = text.replace(/(MCC=\d+ and MNC=\d+)/g, '($1) or');
+//     text = text.replace(/.*(\(MCC=\d+ and MNC=\d+\) or ).*/g, '$1');
+//     text = text.replace(/^.*\s/, 'delete from sms_scheme_traffic where id_client= and \(');
+//     text = text.replace(/ or $/, '\)');
 
 
-    outputPara.innerHTML = text;
-    outputContainer.appendChild(outputPara)
-}
+//     outputPara.innerHTML = text;
+//     outputContainer.appendChild(outputPara)
+// }
