@@ -39,7 +39,7 @@ function formReport() {
 
     const delimiter = document.createElement('p')
     delimiter.textContent = '--------------------------------------------------------------------------------------------'
-    outputPara.classList.add('output');
+    delimiter.classList.add('output');
     outputContainer.appendChild(delimiter)
 }
 
@@ -72,7 +72,7 @@ function trimRouteChange() {
     
     const delimiter = document.createElement('p')
     delimiter.textContent = '--------------------------------------------------------------------------------------------'
-    outputPara.classList.add('output');
+    delimiter.classList.add('output');
     outputContainer.appendChild(delimiter)
 }
         
