@@ -30,6 +30,30 @@ function formReport() {
     outputContainer.appendChild(outputPara)
 
 }
+
+function trimRouteChange() {
+    let text = document.getElementById("inputArea").value;
+
+    text = text.replace(/edited routing rule /g, 'отредактировал правило #');
+    text = text.replace(/created new routing rule /g, 'создал правило ');
+    text = text.replace(/created new partners pool /g, 'создал новый пул ');
+    
+    text = text.replace(/for client/g, 'клиенту');
+    text = text.replace(/network/g, 'сеть');
+    text = text.replace(/удалить/g, 'удалил');
+    text = text.replace(/\d\d-\w\w\w-2\d /g, "<br>");
+    text = text.replace(/EngineAdminBot, \[/g, '');
+    text = text.replace(/\]/g, '');
+    text = text.replace(/\[/g, '');
+    text = text.replace(/changed distribution for partners pool/g, 'изменил распределение в пуле');
+    text = text.replace(/Old distribution/g, 'Было');
+    text = text.replace(/New distribution/g, '; Стало');
+    text = text.replace(/\[/g, '');
+
+
+    outputPara.innerHTML = text;
+    outputContainer.appendChild(outputPara)
+}
         
 // function formSql() {
 //     let text = document.getElementById("inputArea").value;
