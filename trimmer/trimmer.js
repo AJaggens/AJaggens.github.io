@@ -54,6 +54,7 @@ function trimRouteChange() {
         text = text.replace(/edited routing rule /g, 'отредактировал правило #');
         text = text.replace(/created new routing rule /g, 'создал правило ');
         text = text.replace(/created new partners pool /g, 'создал новый пул ');
+        text = text.replace(/deleted routing rule /g, 'удалил правило ');
         
         text = text.replace(/for client/g, 'клиенту');
         text = text.replace(/network/g, 'сеть');
