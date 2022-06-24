@@ -80,7 +80,7 @@ function trimRouteChange() {
     delimiter.classList.add('output');
     outputContainer.appendChild(delimiter)
 }
-        
+
 // function formSql() {
 //     let text = document.getElementById("inputArea").value;
 
