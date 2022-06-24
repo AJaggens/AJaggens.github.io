@@ -8,7 +8,10 @@ function readInput() {
 
 function formReport() {
     let rawMsg = document.getElementById("inputArea").value
-    let msgs = rawMsg.split('Анна Аксенова, ')
+    rawMsg = rawMsg.replace(/Анна Аксенова, /g, '_*_*_*_*_')
+    rawMsg = rawMsg.replace(/Виктория, /g, '_*_*_*_*_')
+    rawMsg = rawMsg.replace(/Ангелина, /g, '_*_*_*_*_')
+    let msgs = rawMsg.split('_*_*_*_*_')
     msgs.shift()
     
     for (const msg of msgs) {
@@ -23,7 +26,8 @@ function formReport() {
         text = text.replace(/отправить/g, 'отправил');
         text = text.replace(/установить/g, 'установил');
         text = text.replace(/подменить/g, 'подменил');
-        text = text.replace(/внести изменение в частное правило и /g, '');
+        text = text.replace(/внести изменения/g, 'внес изменения');
+        text = text.replace(/внести изменение/g, 'внес изменения');
         text = text.replace(/MCC=/g, '');
         text = text.replace(/MNC=/g, '');
         text = text.replace(/\]/g, '');
