@@ -1,4 +1,5 @@
 //input args
+let countryCode = prompt()
 
 //generate sub list from args
 
