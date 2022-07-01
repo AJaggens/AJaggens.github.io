@@ -18,3 +18,12 @@
     "networkPrefix": "92178",
     "valid": true
 }
+
+{
+    "requestError": {
+        "serviceException": {
+            "messageId": "INVALID_GSM_NUMBER",
+            "text": "No valid gsm number provided"
+        }
+    }
+}
