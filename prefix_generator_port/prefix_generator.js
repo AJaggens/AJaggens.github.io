@@ -1,5 +1,6 @@
 //input args
-let countryCode = prompt()
+let currSubNum = prompt("give number")
+let docBody = document.getElementById('outputBody')
 
 //generate sub list from args
 
@@ -14,6 +15,11 @@ fetch(postUrl, {
 	})
 
    .then(response => response.json())
-   .then(json => console.log(json))
+   .then(json => {
+      let outputPara = document.createElement('p')
+      console.log(json)
+      outputPara.textContent = json
+      docBody.appendChild(outputPara)
+   })
 
    //do something with json
