@@ -4,16 +4,15 @@ let numbers = []
 let countryCode = prompt('CC')
 let numLength = prompt('length')
 
-console.log(countryCode.length)
+let listStart = countryCode * Math.pow(10, numLength)
+let listFinish = +(countryCode + (Math.pow(10, numLength) - 1))
 
-let start = countryCode * Math.pow(10, numLength)
-let finish = +(countryCode + (Math.pow(10, +numLength) - 1))
-console.log(start, finish)
+generateNumbers(listStart,listFinish)
+console.log(numbers)
 
 //generate sub list from args
-function generateNumbers (countryCode,numLength) {
-   let numLimit = 
-   for ( ) {
+function generateNumbers (listStart,listFinish) {
+   for (let i = listStart; i++; i <= listFinish) {
       numbers.push(i)
    }
 }
