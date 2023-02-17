@@ -1,3 +1,4 @@
+//todo: сделать весь отчет как одну форму с несколькими полями для заполнения
 
 const outputContainer = document.querySelector('.out')
 
@@ -26,12 +27,13 @@ function formReport() {
         text = text.replace(/отправить/g, 'отправил');
         text = text.replace(/установить/g, 'установил');
         text = text.replace(/подменить/g, 'подменил');
+        text = text.replace(/переименовать/g, 'переименовал');
         text = text.replace(/внести изменения/g, 'внес изменения');
         text = text.replace(/внести изменение/g, 'внес изменения');
         text = text.replace(/MCC=/g, '');
         text = text.replace(/MNC=/g, '');
         text = text.replace(/\]/g, '');
-        text = text.replace(/\[/g, '');
+        text = text.replace(/\[\d{2}\.\d{2}\.\d{4} /g, '');
         text = text.replace(/\d\d-\w\w\w-2\d /g, "");
         
 
@@ -80,17 +82,3 @@ function trimRouteChange() {
     delimiter.classList.add('output');
     outputContainer.appendChild(delimiter)
 }
-
-// function formSql() {
-//     let text = document.getElementById("inputArea").value;
-
-//     text = text.replace(/MNC/g, 'and MNC');
-//     text = text.replace(/(MCC=\d+ and MNC=\d+)/g, '($1) or');
-//     text = text.replace(/.*(\(MCC=\d+ and MNC=\d+\) or ).*/g, '$1');
-//     text = text.replace(/^.*\s/, 'delete from sms_scheme_traffic where id_client= and \(');
-//     text = text.replace(/ or $/, '\)');
-
-
-//     outputPara.innerHTML = text;
-//     outputContainer.appendChild(outputPara)
-// }
